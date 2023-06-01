@@ -2,6 +2,8 @@ html,
 body {
   margin: 0;
   height: 100%;
+  background: #281733;
+  font-family: "Inter", sans-serif;
 }
 
 code {
