@@ -1,12 +1,12 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Grid, GridItem } from "@chakra-ui/react";
 import "./App.css";
 import Editor from "./Editor";
 
 function App() {
   return (
-    <Box>
+    <div id="main">
       <Editor />
-    </Box>
+    </div>
   );
 }
 

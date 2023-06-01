@@ -1,4 +1,16 @@
+#root {
+  height: 100%;
+  width: 100%;
+}
+
 .App {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
+}
+
+#main {
+  height: 100%;
+  width: 100%;
+  padding: 5% 10%;
+  box-sizing: border-box;
 }

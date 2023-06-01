@@ -43,8 +43,6 @@ const Editor: React.FC = () => {
     fitAddon.fit();
   });
 
-  console.log("rendering...");
-
   return <Box id={"editor"} h="full"></Box>;
 };
 
