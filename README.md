@@ -1,5 +1,5 @@
 # Helix editor playground
-A small frontend running a [xtermjs](https://xtermjs.org/) terminal attached to a websocket server executing `helix`.
+A small frontend running a [xtermjs](https://xtermjs.org/) terminal attached to a websocket server executing [helix](helix-editor.com).
 
 ![helix-editor-playground](https://s12.gifyu.com/images/SuIeD.gif)
 
