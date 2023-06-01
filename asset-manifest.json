@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/helix-editor-playground/static/css/main.055a13ed.css",
+    "main.js": "/helix-editor-playground/static/js/main.dcf7aba7.js",
+    "index.html": "/helix-editor-playground/index.html",
+    "main.055a13ed.css.map": "/helix-editor-playground/static/css/main.055a13ed.css.map",
+    "main.dcf7aba7.js.map": "/helix-editor-playground/static/js/main.dcf7aba7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.055a13ed.css",
+    "static/js/main.dcf7aba7.js"
+  ]
+}
