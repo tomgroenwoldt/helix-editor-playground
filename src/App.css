@@ -13,13 +13,27 @@
   width: 100%;
   padding: 5% 10%;
   box-sizing: border-box;
+  color: #ebeafa;
+  font-size: 2rem;
+  font-family: "Inter", sans-serif;
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+#footer {
+  opacity: 0.2;
 }
 
 #choice {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
 }
 
 #choice-value {
@@ -27,8 +41,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 10rem;
-  height: 10rem;
+  width: 15rem;
+  height: 15rem;
   border: 3px solid;
   border-radius: 4px;
   border-color: #ebeafa;
@@ -45,4 +59,9 @@
   max-width: 100%;
   max-height: 50%;
   margin-bottom: 1rem;
+}
+
+#spinner {
+  height: 1rem;
+  width: 1rem;
 }
