@@ -23,7 +23,7 @@ function App() {
     fetch("https://tomgroenwoldt.de/versions").then((res) =>
       res.json().then(setBackendVersions)
     );
-  });
+  }, []);
 
   if (version === undefined) {
     return (
