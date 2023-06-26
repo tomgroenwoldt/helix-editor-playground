@@ -14,3 +14,35 @@
   padding: 5% 10%;
   box-sizing: border-box;
 }
+
+#choice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+#choice-value {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 10rem;
+  border: 3px solid;
+  border-radius: 4px;
+  border-color: #ebeafa;
+  margin: 2rem;
+  color: #ebeafa;
+}
+
+#choice-value:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+#logo {
+  max-width: 100%;
+  max-height: 50%;
+  margin-bottom: 1rem;
+}
