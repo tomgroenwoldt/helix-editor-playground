@@ -56,7 +56,7 @@ function App() {
               )}
             </Box>
           </Box>
-          <Box id={"footer"}>{"updated daily at 00:00 UTC"}</Box>
+          <Box id={"footer"}>{"updated daily"}</Box>
         </Box>
       </div>
     );
