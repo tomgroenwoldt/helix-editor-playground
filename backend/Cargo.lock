@@ -147,6 +147,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "backend"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "axum",
+ "bytes 1.4.0",
+ "futures",
+ "random_name_generator",
+ "serde",
+ "serde_json",
+ "tokio",
+ "tower-http",
+ "tracing",
+ "tracing-subscriber",
+ "uuid",
+ "wspty",
+]
+
+[[package]]
 name = "base64"
 version = "0.13.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -669,25 +688,6 @@ dependencies = [
  "libc",
  "wasi",
  "windows-sys 0.48.0",
-]
-
-[[package]]
-name = "modal-editor-websocket"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "axum",
- "bytes 1.4.0",
- "futures",
- "random_name_generator",
- "serde",
- "serde_json",
- "tokio",
- "tower-http",
- "tracing",
- "tracing-subscriber",
- "uuid",
- "wspty",
 ]
 
 [[package]]

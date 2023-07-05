@@ -51,7 +51,7 @@ pub async fn get_versions() -> Result<Json<Versions>, AppError> {
     cmd.arg("run")
         .arg("--rm")
         .arg("--env")
-        .arg("HELIX=helix_release")
+        .arg("HELIX=release")
         .arg("--env")
         .arg("ARGS=--version")
         .arg("helix-container:latest");
@@ -71,7 +71,7 @@ pub async fn get_versions() -> Result<Json<Versions>, AppError> {
     cmd.arg("run")
         .arg("--rm")
         .arg("--env")
-        .arg("HELIX=helix_master")
+        .arg("HELIX=master")
         .arg("--env")
         .arg("ARGS=--version")
         .arg("helix-container:latest");
