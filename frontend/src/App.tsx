@@ -1,4 +1,4 @@
-import { Box, Spinner } from "@chakra-ui/react";
+import { Box, Button, Spinner } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import "./App.css";
 import Editor from "./Editor";
@@ -32,7 +32,7 @@ function App() {
     return (
       <div id="main">
         <Box id={"center"}>
-          <Box id={"header"}>{"currently under maintenance"}</Box>
+          <Box id={"header"}>{"choose between latest release or master"}</Box>
           <Box id={"choice"}>
             <Box
               id={"choice-value"}
@@ -60,6 +60,15 @@ function App() {
             </Box>
           </Box>
           <Box id={"footer"}>{"updated daily"}</Box>
+          <Box
+            id={"button"}
+            onClick={() => {
+              window.location.href =
+                "https://github.com/tomgroenwoldt/helix-editor-playground";
+            }}
+          >
+            {"View source"}
+          </Box>
         </Box>
       </div>
     );
