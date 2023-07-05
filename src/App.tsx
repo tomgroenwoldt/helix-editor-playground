@@ -9,7 +9,9 @@ export enum Version {
 }
 
 interface BackendVersions {
+  /** Latest helix release version */
   release: string;
+  /** Latest helix master version */
   master: string;
 }
 
@@ -19,6 +21,7 @@ function App() {
     BackendVersions | undefined
   >(undefined);
 
+  // Fetch versions of helix instances served by backend
   useEffect(() => {
     fetch("https://tomgroenwoldt.de/versions").then((res) =>
       res.json().then(setBackendVersions)
@@ -29,7 +32,7 @@ function App() {
     return (
       <div id="main">
         <Box id={"center"}>
-          <Box id={"header"}>{"choose between latest release or master"}</Box>
+          <Box id={"header"}>{"currently under maintenance"}</Box>
           <Box id={"choice"}>
             <Box
               id={"choice-value"}
