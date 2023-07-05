@@ -56,6 +56,10 @@ const Editor: React.FC<EditorProps> = (props: EditorProps) => {
     fitAddon.fit();
   });
 
+  ws.addEventListener("close", (_event) => {
+    window.location.reload();
+  });
+
   return <Box id={"editor"} h="full"></Box>;
 };
 
