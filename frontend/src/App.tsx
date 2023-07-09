@@ -37,7 +37,9 @@ function App() {
             <Box
               id={"choice-value"}
               onClick={() => {
-                setVersion(Version.Release);
+                if (backendVersions) {
+                  setVersion(Version.Release);
+                }
               }}
             >
               <img id={"logo"} src={process.env.PUBLIC_URL + "/logo.png"} />
@@ -47,7 +49,14 @@ function App() {
                 <code id={"spinner"}>{backendVersions.release}</code>
               )}
             </Box>
-            <Box id={"choice-value"} onClick={() => setVersion(Version.Master)}>
+            <Box
+              id={"choice-value"}
+              onClick={() => {
+                if (backendVersions) {
+                  setVersion(Version.Master);
+                }
+              }}
+            >
               <img
                 id={"logo"}
                 src={process.env.PUBLIC_URL + "/github-mark-white.png"}
