@@ -132,9 +132,15 @@ pub async fn handle_ws(ws: WebSocket, version: String) {
         "--bind",
         "/home/user/.config/helix",
         "/home/user/.config/helix",
+        "--bind",
+        "/home/user/playground",
+        "/home/user/playground",
         "/usr/bin/sh",
         "-c",
-        &format!("sleep 0.5 && cd /home/user && /usr/bin/{} --tutor", helix),
+        &format!(
+            "sleep 0.5 && cd /home/user/playground && /usr/bin/{} --tutor",
+            helix
+        ),
     ]);
 
     let mut pty_cmd = PtyCommand::from(cmd);
