@@ -3,11 +3,12 @@ use axum::{
     routing::get,
     Router,
 };
-use helix::{editor, get_versions};
+use helix::{get_versions, tutor};
 use tower_http::cors::CorsLayer;
 
 mod error;
 mod helix;
+mod terminal;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
@@ -21,7 +22,7 @@ async fn main() -> anyhow::Result<()> {
     );
 
     let app = Router::new()
-        .route("/helix/:version", get(editor))
+        .route("/helix/:version", get(tutor))
         .route("/versions", get(get_versions))
         .layer(cors);
 

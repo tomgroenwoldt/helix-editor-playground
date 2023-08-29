@@ -1,0 +1,39 @@
+FROM archlinux:latest AS helix-builder
+
+# Install latest release of helix
+RUN pacman -Sy helix --noconfirm
+
+FROM docker.io/rust:latest AS backend-builder
+WORKDIR /app
+COPY . .
+RUN cargo build --release --target=x86_64-unknown-linux-gnu
+
+# Build helix from latest master
+RUN git clone https://github.com/helix-editor/helix.git && \
+    cd helix && cargo build --release
+RUN rm -rf /helix/runtime/grammars/sources
+
+FROM docker.io/debian:testing-slim
+
+# Install sandbox tool
+RUN apt update && apt install -y bubblewrap
+
+# Add non-root user
+RUN useradd -m user
+
+# Add sample helix configuration and runtime
+RUN mkdir -p /home/user/.config/helix
+COPY static/config.toml /home/user/.config/helix/config.toml
+
+# Add playground rust project
+RUN mkdir /home/user/playground
+COPY static/playground /home/user/playground
+
+
+COPY --chmod=755 --from=backend-builder /app/target/x86_64-unknown-linux-gnu/release/backend /app/backend
+COPY --chmod=755 --from=helix-builder /usr/bin/helix /usr/bin/helix
+COPY --chmod=755 --from=helix-builder /usr/bin/helix /usr/bin/helix
+COPY --chmod=755 --from=backend-builder /app/helix/target/release/hx /usr/bin/hx
+COPY --from=helix-builder /usr/lib/helix/runtime /home/user/.config/helix/runtime
+ENTRYPOINT ["/app/backend"]
+
