@@ -26,7 +26,7 @@ async fn main() -> anyhow::Result<()> {
         .route("/versions", get(get_versions))
         .layer(cors);
 
-    axum::Server::bind(&"127.0.0.1:8080".parse().unwrap())
+    axum::Server::bind(&"0.0.0.0:8080".parse().unwrap())
         .serve(app.into_make_service())
         .await
         .unwrap();
