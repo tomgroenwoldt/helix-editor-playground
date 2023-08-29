@@ -26,7 +26,9 @@ const Editor: React.FC<EditorProps> = (props: EditorProps) => {
   const version = props.version === Version.Release ? "release" : "master";
 
   // Connect to websocket serving helix
-  const ws = new WebSocket("wss://tomgroenwoldt.de/helix/" + version);
+  const ws = new WebSocket(
+    "wss://helix-editor-playground.keygli.de/helix/" + version,
+  );
   ws.addEventListener("open", (_event) => {
     // Load addons
     const fitAddon = new FitAddon();

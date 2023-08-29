@@ -23,8 +23,8 @@ function App() {
 
   // Fetch versions of helix instances served by backend
   useEffect(() => {
-    fetch("https://tomgroenwoldt.de/versions").then((res) =>
-      res.json().then(setBackendVersions)
+    fetch("https://helix-editor-playground.keygli.de/versions").then((res) =>
+      res.json().then(setBackendVersions),
     );
   }, []);
 
