@@ -1,4 +1,4 @@
-name: Build and publish Docker
+name: Build and publish backend
 on:
   # Run this workflow every day
   schedule:
