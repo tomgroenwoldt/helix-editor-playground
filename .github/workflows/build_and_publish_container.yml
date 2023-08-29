@@ -52,5 +52,6 @@ jobs:
         script: |
           echo ${{ secrets.GITHUB_TOKEN }} | podman login ghcr.io -u ${{ secrets.USERNAME }} --password-stdin
           podman pull ghcr.io/tomgroenwoldt/helix-editor-playground-backend:main
+          podman rm -f helix-editor-playground
           cd keyglide/infrastructure && podman-compose up helix-editor-playground -d
 
