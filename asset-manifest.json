@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/helix-editor-playground/static/css/main.ca268baa.css",
-    "main.js": "/helix-editor-playground/static/js/main.474c5c1b.js",
+    "main.js": "/helix-editor-playground/static/js/main.504d1126.js",
     "index.html": "/helix-editor-playground/index.html",
     "main.ca268baa.css.map": "/helix-editor-playground/static/css/main.ca268baa.css.map",
-    "main.474c5c1b.js.map": "/helix-editor-playground/static/js/main.474c5c1b.js.map"
+    "main.504d1126.js.map": "/helix-editor-playground/static/js/main.504d1126.js.map"
   },
   "entrypoints": [
     "static/css/main.ca268baa.css",
-    "static/js/main.474c5c1b.js"
+    "static/js/main.504d1126.js"
   ]
 }
