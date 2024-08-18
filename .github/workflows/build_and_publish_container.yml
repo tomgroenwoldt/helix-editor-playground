@@ -10,7 +10,7 @@ env:
   BACKEND_IMAGE_NAME: ${{ github.repository }}-backend
 
 jobs:
-  build-and-push-backend:
+  build-backend:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -37,21 +37,3 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           file: backend/Containerfile
-  update:
-    needs:
-      - build-and-push-backend
-    runs-on: ubuntu-latest
-    steps:
-    - name: Deploy backend
-      uses: appleboy/ssh-action@v0.1.10
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.KEY }}
-        port: ${{ secrets.PORT }}
-        script: |
-          echo ${{ secrets.GITHUB_TOKEN }} | podman login ghcr.io -u ${{ secrets.USERNAME }} --password-stdin
-          podman pull ghcr.io/tomgroenwoldt/helix-editor-playground-backend:main
-          podman rm -f helix-editor-playground
-          cd helix-editor-playground && podman-compose up helix-editor-playground -d
-
