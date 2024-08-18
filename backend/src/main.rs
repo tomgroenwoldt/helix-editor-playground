@@ -15,11 +15,9 @@ async fn main() -> anyhow::Result<()> {
     tracing_subscriber::fmt().init();
 
     // Allow users to connect from my personal GitHub pages
-    let cors = CorsLayer::new().allow_headers([CONTENT_TYPE]).allow_origin(
-        "https://tomgroenwoldt.github.io"
-            .parse::<HeaderValue>()
-            .unwrap(),
-    );
+    let cors = CorsLayer::new()
+        .allow_headers([CONTENT_TYPE])
+        .allow_origin("http://localhost:3000".parse::<HeaderValue>().unwrap());
 
     let app = Router::new()
         .route("/helix/:version", get(tutor))

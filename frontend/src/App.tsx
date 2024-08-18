@@ -23,7 +23,7 @@ function App() {
 
   // Fetch versions of helix instances served by backend
   useEffect(() => {
-    fetch("https://helix-editor-playground.keygli.de/versions").then((res) =>
+    fetch("http://localhost:8080/versions").then((res) =>
       res.json().then(setBackendVersions),
     );
   }, []);

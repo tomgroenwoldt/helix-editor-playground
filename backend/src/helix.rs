@@ -70,8 +70,6 @@ pub async fn tutor(ws: WebSocketUpgrade, Path(version): Path<String>) -> impl In
 /// websocket to the client. Receives byte stream of xtermjs terminal and pipes
 /// it into the PTY.
 pub async fn handle_ws(ws: WebSocket, version: String) {
-    if !(version == "release" || version == "master") {}
-
     let helix = match version.as_str() {
         "release" => "helix",
         "master" => "hx",
